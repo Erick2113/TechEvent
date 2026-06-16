@@ -9,17 +9,30 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
-)
+import com.example.techevent.ui.theme.BlueU
+import com.example.techevent.ui.theme.GoldU
+import com.example.techevent.ui.theme.RedU
+import com.example.techevent.ui.theme.WhiteU
+private val DarkColorScheme by lazy {
+    darkColorScheme(
+        primary = RedU,
+        secondary = BlueU,
+        tertiary = GoldU,
+    )
+}
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+    primary = RedU,
+    secondary = BlueU,
+    tertiary = GoldU,
+    background = WhiteU,
+    surface = WhiteU,
+    onPrimary = WhiteU,
+    onSecondary = WhiteU,
+    onTertiary = WhiteU,
+    onBackground = WhiteU,
+    onSurface = WhiteU,
+
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -35,7 +48,7 @@ private val LightColorScheme = lightColorScheme(
 @Composable
 fun TechEventTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
